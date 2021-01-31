@@ -1,0 +1,30 @@
+# section information
+section:
+  name: Info
+  id: home
+  enable: true
+  weight: 1
+  showOnNavbar: false
+  template: sections/about.html
+
+summary: |
+  En este sitio web recopilamos ese tipo de cosas que visualmente son muy llamativas pero tienen poca o ninguna utilidad.  
+  La idea surge de una conversación con [Guido B. Corradi](https://corradi.info) implementada por [Jesús P. Rey](https://chuso.net) tras ver unas gráficas muy creativas pero que realmente no eran útiles para entender los datos representados.  
+  Por favor visita también las instrucciones para [contribuir](/contribuir) y la [política de privacidad](/privacidad).
+
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "webmaster@bonitoperoinutil.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://github.com/chusopr/bonitoperoinutil"
+
+- name: Twitter
+  icon: "fab fa-twitter"
+  url: "https://twitter.com/bonito_pero"
+
+- name: Mastodon
+  icon: "fab fa-mastodon"
+  url: "https://mstdn.io/bonitoperoinutil"

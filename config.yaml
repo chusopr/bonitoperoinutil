@@ -1,0 +1,30 @@
+baseURL: https://bonitoperoinutil.com/
+languageCode: es-es
+defaultContentLanguage: es
+title: Bonito pero inútil
+theme: toha-bpi
+
+languages:
+  es:
+    languageName: Español
+    weight: 1
+
+privacy:
+  twitter:
+    disable: false
+    enableDNT: true
+    simple: false
+  youtube:
+    disable: false
+    privacyEnhanced: true
+
+params:
+  logo:
+    main: /images/site/main-logo.png
+    inverted: /images/site/main-logo.png
+    favicon: /favicon.ico
+  gitRepo: https://github.com/chusopr/bonitoperoinutil
+  enableBlogPost: true
+  enableTOC: false
+  newsletter:
+    enable: false

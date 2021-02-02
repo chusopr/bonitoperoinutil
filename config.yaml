@@ -4,6 +4,13 @@ defaultContentLanguage: es
 title: Bonito pero inútil
 theme: toha-bpi
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+    - AMP
+
 languages:
   es:
     languageName: Español
@@ -27,6 +34,7 @@ params:
   gitBranch: website
   enableBlogPost: true
   enableTOC: false
+  enableSearch: true
   recentPostsNum: 6
   footer: false
   splash: false

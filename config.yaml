@@ -27,6 +27,7 @@ params:
   gitBranch: website
   enableBlogPost: true
   enableTOC: false
+  recentPostsNum: 6
   footer: false
   splash: false
   newsletter:

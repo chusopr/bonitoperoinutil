@@ -110,6 +110,9 @@ params:
   # specify whether you want to show Table of Contents in reading page
   enableTOC: true
 
+  # specify the number of recent posts to show in the home page
+  recentPostsNum: 3
+
   # specify whether you want to show the site footer
   footer: true
 

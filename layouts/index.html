@@ -33,6 +33,11 @@
     <!--- NAVBAR ------------------------->
     {{- partial "navigators/navbar.html" . -}}
 
+    {{ if site.Params.splash | default true }}
+    <!--- ADD HOME SECTION ---------------->
+    {{- partial "sections/home.html" . -}}
+    {{ end }}
+
     <!--- ADD OPTIONAL SECTIONS ----------->
     {{ $sections:= site.Data.sections }}
     {{ if (index site.Data site.Language.Lang).sections }}

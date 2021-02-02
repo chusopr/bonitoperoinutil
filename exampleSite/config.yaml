@@ -72,6 +72,9 @@ params:
   # specify whether you want to show the site footer
   footer: true
 
+  # specify whether you want the fancy splash screen shown in the home page
+  splash: true
+
   # Provide newsletter configuration. This feature hasn't been implemented yet.
   # Currently, you can just hide it from the footer.
   newsletter:

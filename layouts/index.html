@@ -60,6 +60,11 @@
       {{ end }}
     {{ end }}
 
+    {{ if site.Params.footer | default true }}
+    <!--- ADD FOOTER ----------------------->
+    {{- partial "footer.html" . -}}
+    {{ end }}
+
     <!--- ADD COMMON SCRIPTS --------------->
     {{ partial "scripts.html" . }}
 

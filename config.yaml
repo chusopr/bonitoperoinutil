@@ -24,6 +24,7 @@ params:
     inverted: /images/site/main-logo.png
     favicon: /favicon.ico
   gitRepo: https://github.com/chusopr/bonitoperoinutil
+  gitBranch: website
   enableBlogPost: true
   enableTOC: false
   newsletter:

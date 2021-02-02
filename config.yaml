@@ -28,5 +28,6 @@ params:
   enableBlogPost: true
   enableTOC: false
   footer: false
+  splash: false
   newsletter:
     enable: false

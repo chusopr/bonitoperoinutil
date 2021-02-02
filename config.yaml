@@ -27,5 +27,6 @@ params:
   gitBranch: website
   enableBlogPost: true
   enableTOC: false
+  footer: false
   newsletter:
     enable: false

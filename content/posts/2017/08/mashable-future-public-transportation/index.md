@@ -6,6 +6,7 @@ hero: /posts/2017/08/mashable-future-public-transportation/index.jpg
 images: [/posts/2017/08/mashable-future-public-transportation/index.jpg]
 summary: " "
 categories: [inventos]
+tags: [mashable,transporte]
 ---
 
 {{< youtube 3eJfS1QFrjg >}}

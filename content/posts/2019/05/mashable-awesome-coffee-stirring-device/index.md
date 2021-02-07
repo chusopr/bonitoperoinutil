@@ -5,6 +5,7 @@ author: chuso
 hero: /posts/2019/05/mashable-awesome-coffee-stirring-device/index.jpg
 images: [/posts/2019/05/mashable-awesome-coffee-stirring-device/index.jpg]
 categories: [inventos]
+tags: [mashable]
 summary: " "
 ---
 

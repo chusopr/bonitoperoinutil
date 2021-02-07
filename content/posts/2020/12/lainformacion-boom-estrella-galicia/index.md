@@ -6,6 +6,7 @@ hero: /posts/2020/12/lainformacion-boom-estrella-galicia/grafico-cervezas.png
 images: [/posts/2020/12/lainformacion-boom-estrella-galicia/grafico-cervezas.png]
 summary: " "
 categories: [dataviz]
+tags: [lainformacion,estrella-galicia]
 ---
 
 {{< figure src="/posts/2020/12/lainformacion-boom-estrella-galicia/grafico-cervezas.png" title="El 'boom' de Estrella Galicia: aumenta su facturación un 167% en solo ocho años" alt="El 'boom' de Estrella Galicia: aumenta su facturación un 167% en solo ocho años" link="https://www.lainformacion.com/empresas/estrella-galicia-boom-facturacion/6512041/" caption="[El 'boom' de Estrella Galicia: aumenta su facturación un 167% en solo ocho años](https://www.lainformacion.com/empresas/estrella-galicia-boom-facturacion/6512041/), La Información, 2019-09-08" >}}

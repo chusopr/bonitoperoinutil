@@ -1,6 +1,7 @@
 +++
 title = "Política de privacidad"
 date = 2021-01-31
+author = "bpi"
 +++
 Este sitio web no almacena ni procesa ningún tipo de información personal o que pueda identificar a sus visitantes.
 

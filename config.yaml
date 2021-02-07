@@ -4,6 +4,10 @@ defaultContentLanguage: es
 title: Bonito pero inútil
 theme: toha-bpi
 
+taxonomies:
+  author: authors
+  category: categories
+
 outputs:
   home:
     - HTML
@@ -15,6 +19,9 @@ languages:
   es:
     languageName: Español
     weight: 1
+    permalinks:
+      authors: /autores/:slug
+      categories: /categorias/:slug
 
 privacy:
   twitter:

@@ -1,9 +1,9 @@
 ---
 title: "Awesome coffee stirring device"
-date: 2021-01-29T08:27:00+01:00
+date: 2019-05-08T09:14:47+00:00
 author: chuso
-hero: /posts/2021/01/mashable-awesome-coffee-stirring-device/index.jpg
-images: [/posts/2021/01/mashable-awesome-coffee-stirring-device/index.jpg]
+hero: /posts/2019/05/mashable-awesome-coffee-stirring-device/index.jpg
+images: [/posts/2019/05/mashable-awesome-coffee-stirring-device/index.jpg]
 categories: [inventos]
 summary: " "
 ---

@@ -48,3 +48,7 @@ params:
   splash: false
   newsletter:
     enable: false
+  share:
+    facebook: true
+    mastodon: 'En @bonitoperoinutil@mstdn.io: "%s" %s'
+    twitter: 'En @bonito_pero: "%s" %s %s'

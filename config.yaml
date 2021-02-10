@@ -51,4 +51,6 @@ params:
   share:
     facebook: true
     mastodon: 'En @bonitoperoinutil@mstdn.io: "%s" %s'
-    twitter: 'En @bonito_pero: "%s" %s %s'
+    twitter:
+      message: 'En @bonito_pero: "%s" %s %s'
+      handle: bonito_pero

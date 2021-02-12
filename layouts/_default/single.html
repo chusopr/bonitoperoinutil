@@ -6,6 +6,22 @@
 />
 <link rel="stylesheet" href="{{ "/assets/css/layouts/single.css" | relURL }}"/>
 <link rel="stylesheet" href="{{ "/assets/css/navigators/sidebar.css" | relURL }}">
+<meta name="twitter:card" content="summary_large_image">
+{{ if and (isset .Site.Params.share "twitter") (isset .Site.Params.share.twitter "handle") }}
+<meta name="twitter:site" content="@{{ .Site.Params.share.twitter.handle }}">
+{{ end }}
+{{ partial "helpers/author-twitter-meta.html" . }}
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:image" content="{{ strings.TrimSuffix "/" site.BaseURL }}{{ partial "helpers/get-hero.html" . | relURL }}">
+{{ if and (isset . "Description") (not (eq .Description "") ) }}
+<meta name="twitter:description" content="{{ .Description }}">
+<meta name="og:description" content="{{ .Description }}">
+{{ end }}
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:locale" content="{{ .Site.Language }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:image" content="{{ strings.TrimSuffix "/" site.BaseURL }}{{ partial "helpers/get-hero.html" . | relURL }}" />
 {{ end }}
 
 {{ define "navbar" }}
@@ -67,8 +83,8 @@
         {{ if not (eq $category "") }}
         {{ $shareTags = printf "%s#%s" $shareTags (replace $category "-" "") }}
         {{ end }}
-        {{ if isset .Site.Params.share "twitter" }}
-        <a title="{{ printf (i18n "share_on") "Twitter" }}" alt="{{ printf (i18n "share_on") "Twitter" }}" href="https://twitter.com/intent/tweet?text={{ printf .Site.Params.share.twitter .Title .Permalink $shareTags }}" target="_blank"><i class="fab fa-twitter"></i></a>
+        {{ if and (isset .Site.Params.share "twitter") (isset .Site.Params.share.twitter "message") }}
+        <a title="{{ printf (i18n "share_on") "Twitter" }}" alt="{{ printf (i18n "share_on") "Twitter" }}" href="https://twitter.com/intent/tweet?text={{ printf .Site.Params.share.twitter.message .Title .Permalink $shareTags }}" target="_blank"><i class="fab fa-twitter"></i></a>
         {{ end }}
         {{ if isset .Site.Params.share "mastodon" }}
         <a title="{{ printf (i18n "share_on") "Mastodon" }}" alt="{{ printf (i18n "share_on") "Mastodon" }}" href="https://sharetomastodon.github.io/?title={{ printf .Site.Params.share.mastodon .Title $shareTags }}&amp;url={{ .Permalink }}" target="_blank"><i class="fab fa-mastodon"></i></a>

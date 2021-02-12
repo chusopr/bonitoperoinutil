@@ -126,11 +126,16 @@ params:
 
   # Enable sharing on different social networks
   share:
-    # Twitter message to use when sharing receives three %s paramters:
-    #   * Post title
-    #   * URL
-    #   * tags
-    twitter: 'I am reading "%s" at %s %s'
+    # Twitter has two subparameters
+    #   * message: enables the Twitter share button and sets
+    #     the message to use when sharing and receives three %s paramters:
+    #     * Post title
+    #     * URL
+    #     * tags
+    #   * handle: Twitter handle of the site used in Twitter cards
+    twitter:
+      message: 'I am reading "%s" at %s %s'
+      handle: bonito_pero
     # Mastodon message to use when sharing receives two %s paramters:
     #   * Post title
     #   * tags

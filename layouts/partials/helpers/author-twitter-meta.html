@@ -1,0 +1,19 @@
+{{ $page_author := "" }}
+{{ if eq (printf "%T" .Params.author ) "string" }}
+  {{ $page_author = ($.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .Params.author))).Params }}
+{{ else if eq (printf "%T" .Params.author ) "maps.Params" }}
+  {{ $page_author = .Params.author }}
+{{ end }}
+
+{{ $authorTwitter := "" }}
+{{ if not (eq $page_author "") }}
+    {{ with $page_author }}
+        {{ if .twitter }}
+            {{ $authorTwitter = .twitter }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if not (eq $authorTwitter "") }}
+<meta name="twitter:creator" content="@{{ $authorTwitter }}">
+{{ end }}

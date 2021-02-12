@@ -123,6 +123,21 @@ params:
   # Currently, you can just hide it from the footer.
   newsletter:
     enable: true
+
+  # Enable sharing on different social networks
+  share:
+    # Twitter message to use when sharing receives three %s paramters:
+    #   * Post title
+    #   * URL
+    #   * tags
+    twitter: 'I am reading "%s" at %s %s'
+    # Mastodon message to use when sharing receives two %s paramters:
+    #   * Post title
+    #   * tags
+    mastodon: 'I am reading "%s" %s'
+    # Facebook doesn't allow pre-filling the message the user will use when
+    # sharing the link, so it's only a boolean true/false value
+    facebook: true
 ```
 
 Don't forget to update `title`, `baseURL`, and `gitRepo` fields with your own information. To know about more available configuration options, please visit [here](https://toha-guides.netlify.app/posts/configuration/site-parameters/).

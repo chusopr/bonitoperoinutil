@@ -29,12 +29,14 @@
           {{ if eq (printf "%T" .Params.author ) "string" }}
           {{ $author = printf `<a href="%s">%s</a>` (.Site.GetPage (printf "authors/%s" (urlize .Params.author))).Permalink $author | safeHTML }}
           {{ end }}
+          {{ $category := "" }}
           {{ if isset .Params "categories" }}
-          {{ $category := index .Params.categories 0 }}
+          {{ $category = index .Params.categories 0 }}
+          {{ $category_link := "" }}
           {{ with .Site.GetPage (printf "/categories/%s" $category) }}
-          {{ $category = printf `<a href="%s">%s</a>` .Permalink .Title }}
+          {{ $category_link = printf `<a href="%s">%s</a>` .Permalink .Title }}
           {{ end }}
-          {{ printf (i18n "author_and_category") $author $category | safeHTML }}
+          {{ printf (i18n "author_and_category") $author $category_link | safeHTML }}
           {{ else }}
           {{ $author }}
           {{ end }}</h5>
@@ -52,6 +54,27 @@
         {{ if $first_tag }},{{ end }}
         <a href="{{ .Permalink }}">{{ .Title }}</a>
         {{- end -}}
+        {{ end }}
+        </p>
+        {{ end }}
+
+        {{ if isset .Site.Params "share" }}
+        <p class="text-center h2">
+        {{ $shareTags := "" }}
+        {{ range $tag := .Params.tags }}
+        {{ $shareTags = printf "%s#%s " $shareTags (replace . "-" "") }}
+        {{ end }}
+        {{ if not (eq $category "") }}
+        {{ $shareTags = printf "%s#%s" $shareTags (replace $category "-" "") }}
+        {{ end }}
+        {{ if isset .Site.Params.share "twitter" }}
+        <a title="{{ printf (i18n "share_on") "Twitter" }}" alt="{{ printf (i18n "share_on") "Twitter" }}" href="https://twitter.com/intent/tweet?text={{ printf .Site.Params.share.twitter .Title .Permalink $shareTags }}" target="_blank"><i class="fab fa-twitter"></i></a>
+        {{ end }}
+        {{ if isset .Site.Params.share "mastodon" }}
+        <a title="{{ printf (i18n "share_on") "Mastodon" }}" alt="{{ printf (i18n "share_on") "Mastodon" }}" href="https://sharetomastodon.github.io/?title={{ printf .Site.Params.share.mastodon .Title $shareTags }}&amp;url={{ .Permalink }}" target="_blank"><i class="fab fa-mastodon"></i></a>
+        {{ end }}
+        {{ if and (isset .Site.Params.share "facebook") (.Site.Params.share.facebook) }}
+        <a title="{{ printf (i18n "share_on") "Facebook" }}" alt="{{ printf (i18n "share_on") "Facebook" }}" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank"><i class="fab fa-facebook"></i></a>
         {{ end }}
         </p>
         {{ end }}

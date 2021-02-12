@@ -73,3 +73,6 @@ other = "Etiquetas"
 
 [tag_title]
 other = "Etiqueta: %s"
+
+[share_on]
+other = "Compartir en %s"

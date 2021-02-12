@@ -76,3 +76,6 @@ other = "Tags"
 
 [tag_title]
 other = "Tag: %s"
+
+[share_on]
+other = "Share on %s"

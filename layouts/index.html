@@ -23,6 +23,22 @@
     <link rel="stylesheet" href="{{ "/assets/css/sections/recent-posts.css" | relURL }}"/>
     <link rel="stylesheet" href="{{ "/assets/css/sections/achievements.css" | relURL }}"/>
 
+    <meta name="twitter:card" content="summary_large_image">
+    {{ if and (isset .Site.Params.share "twitter") (isset .Site.Params.share.twitter "handle") }}
+    <meta name="twitter:site" content="@{{ .Site.Params.share.twitter.handle }}">
+    {{ end }}
+    <meta name="twitter:title" content="{{ .Site.Title }}">
+    <meta name="twitter:image" content="{{ site.Params.logo.main | absURL }}">
+    {{ if not (eq $siteDescription "") }}
+    <meta name="twitter:description" content="{{ $siteDescription }}">
+    <meta name="og:description" content="{{ $siteDescription }}">
+    {{ end }}
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:locale" content="{{ .Site.Language }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:image" content="{{ site.Params.logo.main | absURL }}" />
+
     <!-- Add Google Analytics if enabled in configuration -->
     {{ if site.GoogleAnalytics }}
         {{ template "_internal/google_analytics_async.html" . }}

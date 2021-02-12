@@ -58,3 +58,12 @@ other = "Contribuciones de %s"
 
 [authors]
 other = "Autores"
+
+[author_and_category]
+other = "por %s en %s"
+
+[categories]
+other = "Categorías"
+
+[category_title]
+other = "Categoría: %s"

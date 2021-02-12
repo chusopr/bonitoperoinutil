@@ -61,3 +61,12 @@ other = "Authors"
 
 [bio]
 other = "Bio"
+
+[author_and_category]
+other = "by %s in %s"
+
+[categories]
+other = "Categories"
+
+[category_title]
+other = "Category: %s"

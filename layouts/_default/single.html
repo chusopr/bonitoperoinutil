@@ -24,7 +24,20 @@
       <div class="page-content">
         <div class="author-profile ml-auto align-self-lg-center">
           {{ if eq (printf "%T" .Params.author ) "string" }}<a href="{{ (.Site.GetPage (printf "authors/%s" (urlize .Params.author))).Permalink }}">{{ end }}<img class="rounded-circle" src='{{ partial "helpers/get-author-image.html" . | relURL }}'/>{{ if eq (printf "%T" .Params.author ) "string" }}</a>{{ end }}
-          <h5 class="author-name">{{ if eq (printf "%T" .Params.author ) "string" }}<a href="{{ (.Site.GetPage (printf "authors/%s" (urlize .Params.author))).Permalink }}">{{ end }}{{ partial "helpers/get-author-name.html" . }}{{ if eq (printf "%T" .Params.author ) "string" }}</a>{{ end }}</h5>
+          <h5 class="author-name">
+          {{ $author := partial "helpers/get-author-name.html" . }}
+          {{ if eq (printf "%T" .Params.author ) "string" }}
+          {{ $author = printf `<a href="%s">%s</a>` (.Site.GetPage (printf "authors/%s" (urlize .Params.author))).Permalink $author | safeHTML }}
+          {{ end }}
+          {{ if isset .Params "categories" }}
+          {{ $category := index .Params.categories 0 }}
+          {{ with .Site.GetPage (printf "/%s/%s" "categories" $category) }}
+          {{ $category = printf `<a href="%s">%s</a>` .Permalink .Title }}
+          {{ end }}
+          {{ printf (i18n "author_and_category") $author $category | safeHTML }}
+          {{ else }}
+          {{ $author }}
+          {{ end }}</h5>
           <p>{{ .Page.Date.Format "January 2, 2006" }}</p>
         </div>
 

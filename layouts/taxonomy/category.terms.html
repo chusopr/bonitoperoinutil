@@ -18,13 +18,11 @@
 {{ define "content" }}
 <section class="content-section" id="content-section">
   <div class="content container-fluid" id="content">
-    {{ if isset .Data "Singular" }}
-    <h1 class="my-4">{{ printf (i18n (printf "%s_title" .Data.Singular)) .Title }}</h1>
-    {{ end }}
+    <h1 class="my-4">{{ i18n "categories" }}</h1>
     <div class="container-fluid post-card-holder" id="post-card-holder">
-      {{ $paginator := .Paginate .RegularPagesRecursive 12 }}
+      {{ $paginator := .Paginate .Data.Pages }}
       {{ range $paginator.Pages }}
-        {{ partial "cards/post.html" . }}
+        {{ partial "cards/post.html" (dict "Title" .Title "RelPermalink" .RelPermalink "Params" (dict "hero" .Params.image)) }}
       {{ end }}
     </div>
     <div class="paginator">

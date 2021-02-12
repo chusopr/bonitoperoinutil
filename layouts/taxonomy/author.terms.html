@@ -1,0 +1,37 @@
+{{ define "header" }}
+    <link rel="stylesheet" href="{{ "/assets/css/layouts/list.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "/assets/css/navigators/sidebar.css" | relURL}}">
+{{ end }}
+
+{{ define "navbar" }}
+    {{ partial "navigators/navbar-2.html" . }}
+{{ end }}
+
+{{ define "sidebar" }}
+  {{ $blogHome:="#" }}
+  {{ if site.IsMultiLingual }}
+    {{ $blogHome = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) "posts") }}
+  {{ end }}
+
+{{ end }}
+
+{{ define "content" }}
+<section class="content-section" id="content-section">
+  <div class="content container-fluid" id="content">
+    <h1 class="my-4">{{ i18n "authors" }}</h1>
+    <div class="container-fluid post-card-holder" id="post-card-holder">
+      {{ $paginator := .Paginate .Data.Pages }}
+      {{ range $paginator.Pages }}
+        {{ partial "cards/post.html" (dict "Title" .Data.Term "Summary" .Title "RelPermalink" .RelPermalink "Params" (dict "hero" .Params.image)) }}
+      {{ end }}
+    </div>
+    <div class="paginator">
+      {{ template "_internal/pagination.html" . }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ define "scripts" }}
+    <script src="{{ "/assets/js/list.js" | relURL }}"></script>
+{{ end }}

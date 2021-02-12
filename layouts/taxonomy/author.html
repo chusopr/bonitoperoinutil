@@ -4,6 +4,7 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
 />
+    <link rel="stylesheet" href="{{ "/assets/css/layouts/list.css" | relURL }}">
 <link rel="stylesheet" href="{{ "/assets/css/layouts/single.css" | relURL }}"/>
 <link rel="stylesheet" href="{{ "/assets/css/navigators/sidebar.css" | relURL }}">
 {{ end }}
@@ -17,23 +18,35 @@
   <div class="content">
     <div class="container p-0 read-area">
       <!--Hero Area-->
-      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url({{ strings.TrimSuffix "/" site.BaseURL }}{{ partial "helpers/get-hero.html" . | relURL }});'>
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url({{ if isset .Params "image" }}{{ .Params.image | relURL }}{{ else }}{{ "/assets/images/default-avatar.png" | relURL }}{{ end }});'>
       </div>
 
       <!--Content Start-->
-      <div class="page-content">
-        <div class="author-profile ml-auto align-self-lg-center">
-          {{ if eq (printf "%T" .Params.author ) "string" }}<a href="{{ (.Site.GetPage (printf "authors/%s" (urlize .Params.author))).Permalink }}">{{ end }}<img class="rounded-circle" src='{{ partial "helpers/get-author-image.html" . | relURL }}'/>{{ if eq (printf "%T" .Params.author ) "string" }}</a>{{ end }}
-          <h5 class="author-name">{{ if eq (printf "%T" .Params.author ) "string" }}<a href="{{ (.Site.GetPage (printf "authors/%s" (urlize .Params.author))).Permalink }}">{{ end }}{{ partial "helpers/get-author-name.html" . }}{{ if eq (printf "%T" .Params.author ) "string" }}</a>{{ end }}</h5>
-          <p>{{ .Page.Date.Format "January 2, 2006" }}</p>
-        </div>
+      <div class="page-content" style="top:0px">
 
         <div class="title">
-          <h1>{{ .Page.Title }}</h1>
+          <h1>{{ .Title }}</h1>
+          <h3>{{ .Data.Term }}</h3>
+          {{ with .Params.website }}<h3><a href="{{ . }}">{{ . }}</a></h3>{{ end }}
         </div>
 
         <div class="post-content" id="post-content">
-          {{ .Page.Content }}
+          {{ with .Content }}
+          <h2>{{ i18n "bio" }}</h2>
+          {{ . }}
+          {{ end }}
+
+          <h2>{{ printf (i18n "user_contributions") .Data.Term }}</h2>
+          <div class="container-fluid post-card-holder" id="post-card-holder">
+            {{ $paginator := .Paginate (where .Site.Pages ".Params.author" .Data.Term) }}
+            {{ range $paginator.Pages }}
+            {{ partial "cards/post.html" . }}
+            {{ end }}
+          </div>
+          <div class="paginator">
+            {{ template "_internal/pagination.html" . }}
+          </div>
+
         </div>
 
         <!--- Improve this page button --->
@@ -61,6 +74,7 @@
     {{ partial "navigators/floating-lang-selector.html" . }}
   {{ end }}
 </section>
+
 {{ end }}
 
 {{ define "toc" }}
@@ -78,6 +92,7 @@
 {{ end }}
 
 {{ define "scripts" }}
+    <script src="{{ "/assets/js/list.js" | relURL }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
 <script src="{{ "/assets/js/single.js" | relURL }}"></script>
 <script>

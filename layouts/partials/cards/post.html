@@ -9,7 +9,7 @@
         <p class="card-text post-summary">{{ .Summary }}</p>
       </div>
       <div class="card-footer">
-        <span class="float-left">{{ .Date.Format "January 2, 2006" }}</span>
+        {{ with .Date }}<span class="float-left">{{ .Format "January 2, 2006" }}</span>{{ end }}
         <a
         href="{{ .RelPermalink | relLangURL }}"
         class="float-right btn btn-outline-info btn-sm"

@@ -52,3 +52,12 @@ other = "Improve this page"
 
 [see_older_posts]
 other = "See older posts"
+
+[user_contributions]
+other = "Contributions by %s"
+
+[authors]
+other = "Authors"
+
+[bio]
+other = "Bio"

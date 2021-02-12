@@ -7,8 +7,15 @@
   {{ $authorImage = $author.image }}
 {{ end }}
 
-{{ if eq (printf "%T" .Params.author ) "maps.Params" }}
-    {{ with .Params.author }}
+{{ $page_author := "" }}
+{{ if eq (printf "%T" .Params.author ) "string" }}
+  {{ $page_author = ($.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .Params.author))).Params }}
+{{ else if eq (printf "%T" .Params.author ) "maps.Params" }}
+  {{ $page_author = .Params.author }}
+{{ end }}
+
+{{ if not (eq $page_author "") }}
+    {{ with $page_author }}
         {{ if .image }}
             {{ $authorImage = .image }}
         {{ end }}

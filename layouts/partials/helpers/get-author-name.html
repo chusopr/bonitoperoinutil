@@ -7,7 +7,10 @@
 {{ end }}
 
 {{/*  Lastly, overrides with the post specific author if provided  */}}
-{{ if eq (printf "%T" .Params.author ) "maps.Params" }}
+{{ $page_author := "" }}
+{{ if eq (printf "%T" .Params.author ) "string" }}
+  {{ $authorName = .Params.author }}
+{{ else if eq (printf "%T" .Params.author ) "maps.Params" }}
     {{ with .Params.author }}
         {{ if .name }}
         {{ $authorName = .name }}

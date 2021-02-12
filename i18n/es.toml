@@ -52,3 +52,9 @@ other = "Mejorar esta página"
 
 [see_older_posts]
 other = "Ver entradas antiguas"
+
+[user_contributions]
+other = "Contribuciones de %s"
+
+[authors]
+other = "Autores"

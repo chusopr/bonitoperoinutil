@@ -121,12 +121,17 @@ body {
   background-color: #f9fafc;
   padding: 5px;
 }
+.tags, .tags a,
 .author-profile p {
   color: #8392a5;
 }
 
 .title {
   text-align: center;
+}
+
+.tags a:before {
+    content: '#';
 }
 
 .post-content {

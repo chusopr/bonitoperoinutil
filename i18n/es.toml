@@ -67,3 +67,9 @@ other = "Categorías"
 
 [category_title]
 other = "Categoría: %s"
+
+[tags]
+other = "Etiquetas"
+
+[tag_title]
+other = "Etiqueta: %s"

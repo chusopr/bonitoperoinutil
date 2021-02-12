@@ -70,3 +70,9 @@ other = "Categories"
 
 [category_title]
 other = "Category: %s"
+
+[tags]
+other = "Tags"
+
+[tag_title]
+other = "Tag: %s"

@@ -31,7 +31,7 @@
           {{ end }}
           {{ if isset .Params "categories" }}
           {{ $category := index .Params.categories 0 }}
-          {{ with .Site.GetPage (printf "/%s/%s" "categories" $category) }}
+          {{ with .Site.GetPage (printf "/categories/%s" $category) }}
           {{ $category = printf `<a href="%s">%s</a>` .Permalink .Title }}
           {{ end }}
           {{ printf (i18n "author_and_category") $author $category | safeHTML }}
@@ -44,6 +44,17 @@
         <div class="title">
           <h1>{{ .Page.Title }}</h1>
         </div>
+
+        {{ with .Params.tags }}
+        <p class="tags text-center">
+        {{ range $first_tag, $tag := . }}
+        {{- with $.Site.GetPage (printf "/tags/%s" $tag) -}}
+        {{ if $first_tag }},{{ end }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{- end -}}
+        {{ end }}
+        </p>
+        {{ end }}
 
         <div class="post-content" id="post-content">
           {{ .Page.Content }}

@@ -46,6 +46,7 @@ params:
   recentPostsNum: 6
   footer: false
   splash: false
+  hero_in_post_page: false
   newsletter:
     enable: false
   share:

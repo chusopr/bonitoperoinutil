@@ -2,6 +2,7 @@
 section:
   name: Info
   id: home
+  title: Bonito pero inútil
   enable: true
   weight: 1
   showOnNavbar: false

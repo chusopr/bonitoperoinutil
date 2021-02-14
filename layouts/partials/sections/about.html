@@ -18,7 +18,7 @@
     </div>
     <!-- summary -->
     <div class="col-sm-6">
-      <h3 class="p-1">{{ $author.name }}</h3>
+      <h3 class="p-1">{{ default .section.title $author.name }}</h3>
       {{ if .designation }}
       <h5 class="p-1">
         {{ .designation }}

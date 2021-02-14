@@ -119,6 +119,9 @@ params:
   # specify whether you want the fancy splash screen shown in the home page
   splash: true
 
+  # specify whether you want the hero image in the post page header
+  hero_in_post_page: true
+
   # Provide newsletter configuration. This feature hasn't been implemented yet.
   # Currently, you can just hide it from the footer.
   newsletter:

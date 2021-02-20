@@ -22,7 +22,7 @@
     <h1 class="my-4">{{ printf (i18n (printf "%s_title" .Data.Singular)) .Title }}</h1>
     {{ end }}
     <div class="container-fluid post-card-holder" id="post-card-holder">
-      {{ $paginator := .Paginate .RegularPagesRecursive 12 }}
+      {{ $paginator := .Paginate .RegularPagesRecursive (default 12 .Site.Params.postsPerPage) }}
       {{ range $paginator.Pages }}
         {{ partial "cards/post.html" . }}
       {{ end }}

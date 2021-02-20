@@ -74,6 +74,9 @@ params:
   # specify whether you want to write some blog posts or not
   enableBlogPost: true
 
+  # number of posts per page to show in listings
+  postsPerPage: 12
+
   # specify whether you want to show Table of Contents in reading page
   enableTOC: true
 

@@ -1,9 +1,9 @@
 ---
-title: "This futuristic face shield is a serious upgrade from a bandana face mask"
+title: "Mascarilla sanitaria futurista"
 date: 2020-06-20T18:08:23+00:00
 author: chuso
-hero: /posts/2020/06/mashable-futuristic-face-mask/index.jpg
-images: [/posts/2020/06/mashable-futuristic-face-mask/index.jpg]
+hero: /posts/2020/06/mashable-mascarilla-sanitaria-futurista/index.jpg
+images: [/posts/2020/06/mashable-mascarilla-sanitaria-futurista/index.jpg]
 summary: " "
 categories: [inventos]
 tags: [mashable,mascarilla]

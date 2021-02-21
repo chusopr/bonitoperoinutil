@@ -2,8 +2,8 @@
 title: "World map of Waldorf/Steiner schools"
 date: 2020-11-24T18:23:31+01:00
 author: chuso
-hero: /posts/2020/11/world-map-of-waldorf-steiner-schools/index.jpg
-images: [/posts/2020/11/world-map-of-waldorf-steiner-schools/index.jpg]
+hero: /posts/2020/11/mapa-escuelas-waldorf/index.jpg
+images: [/posts/2020/11/mapa-escuelas-waldorf/index.jpg]
 summary: " "
 categories: [dataviz]
 tags: [cartograma,gastner-newman,mapa]

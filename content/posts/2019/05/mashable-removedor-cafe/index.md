@@ -1,9 +1,9 @@
 ---
-title: "Awesome coffee stirring device"
+title: "«Impresionante» removedor de café"
 date: 2019-05-08T09:14:47+00:00
 author: chuso
-hero: /posts/2019/05/mashable-awesome-coffee-stirring-device/index.jpg
-images: [/posts/2019/05/mashable-awesome-coffee-stirring-device/index.jpg]
+hero: /posts/2019/05/mashable-removedor-cafe/index.jpg
+images: [/posts/2019/05/mashable-removedor-cafe/index.jpg]
 categories: [inventos]
 tags: [mashable]
 summary: " "

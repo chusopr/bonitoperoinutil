@@ -1,5 +1,5 @@
 ---
-title: "World map of Waldorf/Steiner schools"
+title: "Mapa de escuelas Waldorf"
 date: 2020-11-24T18:23:31+01:00
 author: chuso
 hero: /posts/2020/11/mapa-escuelas-waldorf/index.jpg
